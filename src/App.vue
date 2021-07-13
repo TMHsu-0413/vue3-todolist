@@ -1,29 +1,72 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="main">
+    <header class="header">
+      <a href="#" class="logo">Logo</a>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+    <router-view></router-view>
   </div>
-  <router-view />
 </template>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  //-webkit-font-smoothing: antialiased;
+  //-moz-osx-font-smoothing: grayscale;
 }
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(#2b1055,#7597de);
+}
+.header{
+  position: absolute;
+  top:0;
+  left:0;
+  width: 90%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index:10000;
 
-#nav {
-  padding: 30px;
+  .logo {
+    color:#fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    &.router-link-exact-active {
-      color: #42b983;
+    li {
+      list-style: none;
+      margin-left: 20px;
+
+      a{
+        text-decoration: none;
+        padding: 6px 15px;
+        color:#fff;
+        border-radius: 20px;
+
+        &:hover,&.active {
+          color:#2b1055;
+          background: #fff;
+        }
+      }
     }
   }
 }
