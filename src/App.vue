@@ -1,10 +1,10 @@
 <template>
   <div class="main">
     <header class="header">
-      <a href="#" class="logo">Logo</a>
+      <a href="#" class="bigicon"><logo-snapchat-icon class="logo" /><h2 class="word">Tang-Ming</h2></a>
       <ul>
         <li><router-link to="/" active-class="active">Home</router-link></li>
-        <li><router-link to="/Done" active-class="active">Done</router-link></li>
+        <li><router-link to="/Done" active-class="active">Todolist</router-link></li>
         <li><router-link to="/Undone" active-class="active">Undone</router-link></li>
         <li><router-link to="/Add" active-class="active">Add</router-link></li>
       </ul>
@@ -39,12 +39,10 @@ body {
   z-index:10000;
 
   .logo {
-    color:#fff;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 2em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    flex-basis: 10%;
+    fill: #fff;
+    width:20%;
+    font-size: 3em;
   }
 
   ul {
@@ -68,6 +66,20 @@ body {
         }
       }
     }
+  }
+  .bigicon {
+    width:30%;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .word {
+    flex:1;
+    font-size: 2em;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #fff;
   }
 }
 </style>

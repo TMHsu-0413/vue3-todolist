@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Done from "../views/Done.vue"
+import Undone from "../views/Undone.vue"
+import Add from "../views/Add.vue"
 
 const routes = [
   {
@@ -13,6 +15,16 @@ const routes = [
     name: "Done",
     component: Done
   },
+  {
+    path: "/Undone",
+    name: "Undone",
+    component: Undone
+  },
+  {
+    path: "/Add",
+    name: "Add",
+    component: Add
+  }
 ];
 
 const router = createRouter({

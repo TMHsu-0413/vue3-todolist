@@ -10,7 +10,8 @@
     </section>
     <div class="sec" id="sec">
       <h2>唐銘der練習網頁</h2>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit eligendi tempore molestiae sit, hic placeat, iste, sequi natus voluptate ut officiis temporibus beatae saepe deserunt sed debitis perspiciatis maxime odit!<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, molestias ipsa. Explicabo reiciendis placeat consequuntur nostrum fugit commodi. Necessitatibus, modi illum. Voluptatibus perspiciatis, culpa rerum possimus maiores commodi ut? Ex?<br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus error ratione suscipit odit, quaerat deleniti aliquam id? Dolore omnis sapiente ipsa, ipsum perferendis delectus dolorem minima blanditiis! Tempore, quod iusto.</p>
+      <p>這個網頁主要是用來練習Vue3做為frontend，golang作為backend</p>
+      <p>主要功能為todolist</p>
     </div>
   </div>
 </template>
@@ -46,7 +47,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 section {
   position: relative;
