@@ -9,41 +9,38 @@
       <img src="image/mountains_front.png" id="mountains_front">
     </section>
     <div class="sec" id="sec">
-      <h2>唐銘der練習網頁</h2>
+      <h2>朝恩der練習網頁</h2>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit eligendi tempore molestiae sit, hic placeat, iste, sequi natus voluptate ut officiis temporibus beatae saepe deserunt sed debitis perspiciatis maxime odit!<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, molestias ipsa. Explicabo reiciendis placeat consequuntur nostrum fugit commodi. Necessitatibus, modi illum. Voluptatibus perspiciatis, culpa rerum possimus maiores commodi ut? Ex?<br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus error ratione suscipit odit, quaerat deleniti aliquam id? Dolore omnis sapiente ipsa, ipsum perferendis delectus dolorem minima blanditiis! Tempore, quod iusto.</p>
     </div>
   </div>
 </template>
 
 <script>
-import { onMounted } from 'vue'
+let stars = document.getElementById('stars');
+let moon = document.getElementById('moon');
+let mountains_behind = document.getElementById('mountains_behind');
+let mountains_front = document.getElementById('mountains_front');
+let btn = document.getElementById('btn');
+let text = document.getElementById('text');
+let header = document.querySelector('header');
+
+window.addEventListener('scroll', function(){
+  let value = window.scrollY;
+  stars.style.left = value + 'px';
+  moon.style.top = value * 1.05 + 'px';
+  mountains_behind.style.top = value * 0.5 +'px';
+  mountains_front.style.top = value * 0 +'px';
+  text.style.marginRight = value * 4 +'px';
+  text.style.marginTop = value * 1.5 + 'px';
+  btn.style.marginTop = value * 1.5 +'px';
+  header.style.top = value * 0.5 +'px';
+})
 
 export default {
   name: "Home",
-  setup() {
-    onMounted(() => {
-      var stars = document.getElementById('stars');
-      var moon = document.getElementById('moon');
-      var mountains_behind = document.getElementById('mountains_behind');
-      var mountains_front = document.getElementById('mountains_front');
-      var btn = document.getElementById('btn');
-      var text = document.getElementById('text');
-      var header = document.querySelector('header');
-
-      window.addEventListener('scroll', function(){
-        var value = window.scrollY;
-        stars.style.left = value + 'px';
-        moon.style.top = value * 1.05 + 'px';
-        mountains_behind.style.top = value * 0.5 +'px';
-        mountains_front.style.top = value * 0 +'px';
-        text.style.marginRight = value * 4 +'px';
-        text.style.marginTop = value * 1.5 + 'px';
-        btn.style.marginTop = value * 1.5 +'px';
-        header.style.top = value * 0.5 +'px';
-      })
-    })
-  }
-}
+  components: {
+  },
+};
 </script>
 
 <style lang="scss">
@@ -119,4 +116,5 @@ section {
       color:#fff;
     }
 }
+
 </style>

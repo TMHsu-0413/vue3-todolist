@@ -3,10 +3,10 @@
     <header class="header">
       <a href="#" class="logo">Logo</a>
       <ul>
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Work</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><router-link to="/" active-class="active">Home</router-link></li>
+        <li><router-link to="/Done" active-class="active">Done</router-link></li>
+        <li><router-link to="/Undone" active-class="active">Undone</router-link></li>
+        <li><router-link to="/Add" active-class="active">Add</router-link></li>
       </ul>
     </header>
     <router-view></router-view>
