@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
-import Done from "../views/Done.vue"
+import Todolist from "../views/Todolist.vue"
 import Undone from "../views/Undone.vue"
 import Add from "../views/Add.vue"
 
@@ -9,11 +9,13 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+    meta: {title: '首頁'}
   },
   {
-    path: "/Done",
-    name: "Done",
-    component: Done
+    path: "/Todolist",
+    name: "Todolist",
+    component: Todolist,
+    meta: {title: 'Todolist'}
   },
   {
     path: "/Undone",
@@ -32,4 +34,9 @@ const router = createRouter({
   routes,
 });
 
+
+router.beforeEach((to,from,next) => {
+  window.document.title = to.meta.title;
+  next()
+})
 export default router;

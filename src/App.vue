@@ -1,15 +1,20 @@
 <template>
   <div class="main">
     <header class="header">
-      <a href="#" class="bigicon"><logo-snapchat-icon class="logo" /><h2 class="word">Tang-Ming</h2></a>
+      <router-link to="/" class="bigicon"><logo-snapchat-icon class="logo" /><h2 class="word">Tang-Ming</h2></router-link>
       <ul>
         <li><router-link to="/" active-class="active">Home</router-link></li>
-        <li><router-link to="/Done" active-class="active">Todolist</router-link></li>
+        <li><router-link to="/Todolist" active-class="active">Todolist</router-link></li>
         <li><router-link to="/Undone" active-class="active">Undone</router-link></li>
         <li><router-link to="/Add" active-class="active">Add</router-link></li>
       </ul>
     </header>
+
     <router-view></router-view>
+
+    <footer class="footer">
+      <span >Copyright &copy; 2021 Tang-Ming Hsu.</span>
+    </footer>
   </div>
 </template>
 
@@ -21,6 +26,12 @@
   //-webkit-font-smoothing: antialiased;
   //-moz-osx-font-smoothing: grayscale;
 }
+.main {
+  min-height: 100vh;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+}
 body {
   margin: 0;
   padding: 0;
@@ -28,7 +39,7 @@ body {
   background: linear-gradient(#2b1055,#7597de);
 }
 .header{
-  position: absolute;
+  position: relative;
   top:0;
   left:0;
   width: 90%;
@@ -81,5 +92,15 @@ body {
     font-weight: 600;
     color: #fff;
   }
+}
+.footer{
+  position: relative;
+  border-top: 1px solid #fff;
+  //border-left:1px solid #fff;
+  background: transparent;
+  align-self: flex-end;
+  font-size: 1.2em;
+  padding: 5px 10px;
+  color:#fff;
 }
 </style>

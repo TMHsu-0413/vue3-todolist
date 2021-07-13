@@ -1,24 +1,13 @@
 <template>
   <div class="flex">
     <h2 class=title>Todolist.</h2>
-    <!--<ion-icon name="add-circle-outline" class="btn add"></ion-icon>-->
     <ios-add-icon class="btn add" />
     <div class="thing">
       <h2>倒垃圾</h2>
       <button class="btn">&times;</button>
     </div>
-    <div class="thing">
-      <h2>買晚餐</h2>
-      <button class="btn">&times;</button>
-    </div>
-    <div class="thing">
-      <h2>倒垃圾</h2>
-      <button class="btn">&times;</button>
-    </div>
-    <div class="thing">
-      <h2>倒垃圾</h2>
-      <button class="btn">&times;</button>
-    </div>
+    
+    
   </div>
 </template>
 
@@ -30,6 +19,8 @@ export default {
 
 <style lang="scss" scoped>
 .flex {
+  height: 100%;
+  margin-bottom: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,8 +28,7 @@ export default {
 }
 .title {
   position: relative;
-  margin-top :5%;
-  z-index: 10001;
+  z-index: 9998;
   color:#fff;
   letter-spacing: 5px;
   font-size: 3em;
@@ -51,8 +41,8 @@ export default {
     left:0;
     width:100%;
     height: 100%;
-    z-index: 1000;
-    background: linear-gradient(#321D62,#362469);
+    z-index: 9999;
+    background: linear-gradient(#362469,#3A2B70);
     animation: type 4s steps(24) forwards;
   }
   &::after {
@@ -62,7 +52,7 @@ export default {
     left:0;
     width:0.125em;
     background: black;
-    z-index:1001;
+    z-index:10001;
     animation: type 4s steps(24) forwards,blink 500ms steps(24) infinite;
     height: 100%;
   }
@@ -72,6 +62,7 @@ export default {
   padding : 15px 30px;
   border-radius: 40px;
   background: #fff;
+  z-index:10000;
   margin-top: 15px;
   position: relative;
 }
@@ -103,7 +94,7 @@ export default {
   fill: green;
   text-align: center;
   right:40%;
-  top: 10%;
+  top: 17%;
   z-index: 10001;
 
   &:hover {

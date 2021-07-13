@@ -5,13 +5,15 @@
       <img src="image/moon.png" id="moon">
       <img src="image/mountains_behind.png" id="mountains_behind">
       <h2 id="text">Moon Light</h2>
-      <a href="#" id="btn">Explore</a>
+      <a href="https://github.com/Z1yx?tab=repositories" id="btn">My Github</a>
       <img src="image/mountains_front.png" id="mountains_front">
     </section>
     <div class="sec" id="sec">
       <h2>唐銘der練習網頁</h2>
       <p>這個網頁主要是用來練習Vue3做為frontend，golang作為backend</p>
-      <p>主要功能為todolist</p>
+      <p>目前主要功能為todolist 練習使用golang撰寫CRUD 未來可能擴充</p>
+      <p>我好爛，沒救了</p>
+      <p></p>
     </div>
   </div>
 </template>
@@ -73,6 +75,7 @@ section {
     left:0;
     width:100%;
     height: 100%;
+    pointer-events: none;
     object-fit: cover;
 
     &#moon {
