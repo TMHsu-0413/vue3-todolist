@@ -19,8 +19,6 @@ export default {
 
 <style lang="scss" scoped>
 .flex {
-  height: 100%;
-  margin-bottom: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;

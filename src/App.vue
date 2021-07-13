@@ -10,10 +10,10 @@
       </ul>
     </header>
 
-    <router-view></router-view>
+    <router-view class="mb-auto"></router-view>
 
     <footer class="footer">
-      <span >Copyright &copy; 2021 Tang-Ming Hsu.</span>
+      <span >Copyright &copy; 2021 Tang-Ming Hsu. All Rights Reserved.</span>
     </footer>
   </div>
 </template>
@@ -28,7 +28,7 @@
 }
 .main {
   min-height: 100vh;
-  width:100%;
+  min-width:100%;
   display: flex;
   flex-direction: column;
 }
@@ -37,6 +37,9 @@ body {
   padding: 0;
   min-height: 100vh;
   background: linear-gradient(#2b1055,#7597de);
+}
+.mb-auto {
+  margin-bottom: auto;
 }
 .header{
   position: relative;
@@ -98,9 +101,9 @@ body {
   border-top: 1px solid #fff;
   //border-left:1px solid #fff;
   background: transparent;
-  align-self: flex-end;
+  //align-self: flex-end;
   font-size: 1.2em;
-  padding: 5px 10px;
+  padding: 10px 20px;
   color:#fff;
 }
 </style>

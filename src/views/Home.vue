@@ -10,10 +10,20 @@
     </section>
     <div class="sec" id="sec">
       <h2>唐銘der練習網頁</h2>
+      <p class="date">Start Date: 7/12</p>
       <p>這個網頁主要是用來練習Vue3做為frontend，golang作為backend</p>
       <p>目前主要功能為todolist 練習使用golang撰寫CRUD 未來可能擴充</p>
+      <p>7/14 3:55 今天瞎搞排版搞了一天，vue3實作於vue2相對麻煩，但是做完蠻有成就感的，又更熟悉了flex的用法，之後要學一下grid layout</p>
       <p>我好爛，沒救了</p>
+      <p>窩4大便 2ㄏ</p>
       <p></p>
+    </div>
+    <div class="trd" id="trd">
+      <h2 class="title">我的應用程式</h2>
+      <a href="https://www.facebook.com/profile.php?id=100008041262760" class="item"><logo-facebook-icon class="logo" /></a>
+      <a href="https://www.instagram.com/tang.ming0413/" class="item"><logo-instagram-icon class="logo" /></a>
+      <a href="https://www.youtube.com/channel/UCTNaiwfrpAHnyRfTeS8skWA" class="item"><logo-youtube-icon class="logo" /></a>
+      <a href="https://github.com/Z1yx?tab=repositories" class="item"><logo-github-icon class="logo" /></a>
     </div>
   </div>
 </template>
@@ -50,7 +60,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.date {
+  font-weight: bold;
+}
 section {
   position: relative;
   height: 100vh;
@@ -122,5 +134,30 @@ section {
       font-size:1.5em;
       color:#fff;
     }
+}
+.trd {
+  background: linear-gradient(to bottom,#1c0522,transparent);
+  display: flex;
+  padding: 100px;
+
+  .title {
+    width:100%;
+    font-size:3.5em;
+    color:#fff;
+    margin-bottom: 10px;
+  }
+  .item {
+    
+  }
+  .logo{
+    margin-left: 50px;
+    fill:#fff;
+    font-size:8em;
+    transition: all .3s;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
 }
 </style>
