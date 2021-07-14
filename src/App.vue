@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <header class="header">
-      <router-link to="/" class="bigicon"><logo-snapchat-icon class="logo" /><h2 class="word">Tang-Ming</h2></router-link>
+      <router-link to="/" class="bigicon"><logo-snapchat-icon class="logo flexmid" /><h2 class="word">Tang-Ming</h2></router-link>
       <ul>
         <li><router-link to="/" active-class="active">Home</router-link></li>
         <li><router-link to="/Todolist" active-class="active">Todolist</router-link></li>
@@ -13,15 +13,53 @@
     <router-view class="mb-auto"></router-view>
 
     <footer class="footer">
-      <span >Copyright &copy; 2021 Tang-Ming Hsu. All Rights Reserved.</span>
+      <span>Copyright &copy; 2021 Tang-Ming Hsu. All Rights Reserved.</span>
+      <span class="timeflex"><md-time-icon class="timelogo flexmid" />{{state.timestamp}}</span>
     </footer>
   </div>
 </template>
 
+<script>
+import { reactive } from '@vue/reactivity';
+export default {
+  setup() {
+    const state = reactive({
+      timestamp: ""
+    })
+    setInterval(() =>{
+      getNow()
+    },1000)
+    function getNow() {
+      const today = new Date();
+      const date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
+      var apm = "AM"
+      var hour = today.getHours()
+      if(hour > 12){
+        hour = hour - 12
+        apm="PM"
+      }
+      var minute = today.getMinutes()
+      var second = today.getSeconds()
+      hour = hour < 10 ? '0'+hour:hour
+      minute = minute < 10 ? '0'+minute:minute
+      second = second < 10 ? '0'+second:second
+      const time = hour + ":" + minute + ":"+ second + " " + apm
+      const dateTime = date +'  '+ time;
+      state.timestamp = dateTime
+    }
+    return {
+      state
+    }
+  },
+}
+</script>
+
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
-#app {
+* {
   box-sizing: border-box;
+}
+#app {
   font-family: 'Poppins', sans-serif;
   //-webkit-font-smoothing: antialiased;
   //-moz-osx-font-smoothing: grayscale;
@@ -45,7 +83,7 @@ body {
   position: relative;
   top:0;
   left:0;
-  width: 90%;
+  width: 100%;
   padding: 30px 100px;
   display: flex;
   justify-content: space-between;
@@ -97,6 +135,9 @@ body {
   }
 }
 .footer{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
   border-top: 1px solid #fff;
   //border-left:1px solid #fff;
@@ -105,5 +146,18 @@ body {
   font-size: 1.2em;
   padding: 10px 20px;
   color:#fff;
+}
+.timeflex {
+  display: flex;
+  align-items: center;
+  letter-spacing: 1.5px;
+}
+.timelogo {
+  font-size: 1.5em;
+}
+.flexmid{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
