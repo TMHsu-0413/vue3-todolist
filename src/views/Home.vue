@@ -4,7 +4,7 @@
       <img src="image/stars.png" id="stars">
       <img src="image/moon.png" id="moon">
       <img src="image/mountains_behind.png" id="mountains_behind">
-      <h2 id="text">Moon Light</h2>
+      <h2 id="text">練習用</h2>
       <a href="https://github.com/Z1yx?tab=repositories" id="btn">My Github</a>
       <img src="image/mountains_front.png" id="mountains_front">
     </section>
@@ -14,6 +14,7 @@
       <p>這個網頁主要是用來練習Vue3做為frontend，golang作為backend</p>
       <p>目前主要功能為todolist 練習使用golang撰寫CRUD 未來可能擴充</p>
       <p>7/14 3:55 今天瞎搞排版搞了一天，vue3實作於vue2相對麻煩，但是做完蠻有成就感的，又更熟悉了flex的用法，之後要學一下grid layout</p>
+      <p>7/15 17:18 今天終於把Go的CRUD看懂了，也成功實做出來，語法相對nodejs來說好像比較麻煩，但go太香了受不了</p>
       <p>我好爛，沒救了</p>
       <p>窩4大便 2ㄏ</p>
       <p></p>

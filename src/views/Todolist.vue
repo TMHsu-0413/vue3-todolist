@@ -1,19 +1,45 @@
 <template>
   <div class="flex">
-    <h2 class=title>Todolist.</h2>
-    <ios-add-icon class="btn add" />
-    <div class="thing">
-      <h2>倒垃圾</h2>
-      <button class="btn">&times;</button>
+    <h2 class=title>My Todolist.</h2>
+    <ios-add-icon class="btn add" @click="create" />
+    <div class="thing" v-for="(item,idx) in data.allThing" :key="'list'+idx">
+      <h2>{{item.Name}}</h2>
+      <button class="btn" @click="rm(item.ID)">&times;</button>
     </div>
-    
-    
   </div>
 </template>
 
 <script>
+import { onMounted, reactive } from 'vue'
+import axios from 'axios'
 export default {
-  name: "Done",
+  setup () {
+    const data = reactive({
+      allThing: []
+    })
+    onMounted (async() => {
+      init()
+    })
+    async function init() {
+      var thing = await axios.get('http://127.0.0.1:8888/api/')
+      data.allThing = thing.data.message
+    }
+    async function rm(id) {
+      await axios.delete(`http://127.0.0.1:8888/api/${id}`)
+      init()
+    }
+    async function create() {
+      let thing = {"Name":"好欸"}
+      await axios.post(`http://127.0.0.1:8888/api/`,thing)
+      init()
+    }
+    return {
+      data,
+      init,
+      rm,
+      create
+    }
+  }
 };
 </script>
 
@@ -29,31 +55,13 @@ export default {
   z-index: 9998;
   color:#fff;
   letter-spacing: 5px;
+  white-space: nowrap;
   font-size: 3em;
   text-transform: uppercase;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height: 100%;
-    z-index: 9999;
-    background: linear-gradient(#362469,#3A2B70);
-    animation: type 4s steps(24) forwards;
-  }
-  &::after {
-    content: '';
-    position: absolute;
-    top:0;
-    left:0;
-    width:0.125em;
-    background: black;
-    z-index:10001;
-    animation: type 4s steps(24) forwards,blink 500ms steps(24) infinite;
-    height: 100%;
-  }
+  overflow: hidden;
+  animation: typing 4s steps(24);
+  animation-iteration-count: 1;
+  border-right: 2px solid black;
 }
 .thing {
   width:35%;
@@ -91,7 +99,7 @@ export default {
 .add{
   fill: green;
   text-align: center;
-  right:40%;
+  right:38%;
   top: 17%;
   z-index: 10001;
 
@@ -100,14 +108,12 @@ export default {
     fill: #fff;
   }
 }
-@keyframes type {
-  to{
-    left:100%;
+@keyframes typing {
+  0%{
+    width:0px;
   }
-}
-@keyframes blink {
-  to{
-    background: transparent;
-  } 
+  100%{
+    width:395.66px;
+  }
 }
 </style>
