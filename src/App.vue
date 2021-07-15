@@ -60,7 +60,6 @@ export default {
   box-sizing: border-box;
 }
 #app {
-  font-family: 'Poppins', sans-serif;
   //-webkit-font-smoothing: antialiased;
   //-moz-osx-font-smoothing: grayscale;
 }
@@ -75,6 +74,7 @@ body {
   padding: 0;
   min-height: 100vh;
   background: linear-gradient(#2b1055,#7597de);
+  font-family: 'Poppins', sans-serif;
 }
 .mb-auto {
   margin-bottom: auto;
