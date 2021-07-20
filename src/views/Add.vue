@@ -1,12 +1,25 @@
 <template>
 	<div class="flex">
-		<h2 class="continued">To be continued...</h2>
-	</div>
+    <img src="image/temp_back.jpg" id="temprature" />
+    <input type="text" class="text" v-model="Locale" @keydown.enter="$store.dispatch('api_temp')" />
+    <h2 class="text">{{ $store.state.Locale}}</h2>
+    <h2 class="text">{{ $store.state.temprature}}</h2>
+    <div class="temprature"></div>
+  </div>
 </template>
 
 <script>
 export default {
-    name:'Undone'
+  computed: {
+    Locale: {
+      get() {
+        return this.$store.state.Locale
+      },
+      set(newValue) {
+        this.$store.commit('changeLocale',newValue)
+      }
+    }
+  }
 }
 </script>
 
@@ -17,22 +30,14 @@ export default {
     flex:1;
     align-items: center;
 }
-.continued {
-    color:white;
-    height: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-		font-size: 3em;
-    transition: 0.5s;
-    border-right: 1px solid black;
-    animation: typing 5s steps(18) infinite;
+#temprature {
+  width:100%;
+  height: 100%;
+  position: absolute;
+  left:0;
+  top:0;
 }
-@keyframes typing {
-  0%,90%,100%{
-    width:0px;
-  }
-  30%,60%{
-    width:435.55px;
-  }
+.text {
+  z-index: 10001;
 }
 </style>

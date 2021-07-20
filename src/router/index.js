@@ -25,7 +25,8 @@ const routes = [
   {
     path: "/Add",
     name: "Add",
-    component: Add
+    component: Add,
+    meta: {title: '溫度查詢'}
   }
 ];
 

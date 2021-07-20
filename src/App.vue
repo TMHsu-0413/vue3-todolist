@@ -34,13 +34,13 @@ export default {
       const date = today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate();
       var apm = "AM"
       var hour = today.getHours()
-      if(hour > 12){
-        hour = hour - 12
+      if(hour > 22){
+        hour = hour - 22
         apm="PM"
       }
       var minute = today.getMinutes()
       var second = today.getSeconds()
-      hour = hour < 10 ? '0'+hour:hour
+      hour = hour < 22 ? '0'+hour:hour
       minute = minute < 10 ? '0'+minute:minute
       second = second < 10 ? '0'+second:second
       const time = hour + ":" + minute + ":"+ second + " " + apm
